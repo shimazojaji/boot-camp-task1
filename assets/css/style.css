@@ -1,0 +1,252 @@
+/* Import Custom Fonts */
+@import url("./fonts.css");
+
+/* Reset Section*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Variable Section */
+
+:root {
+  /*Border radius  */
+  --border-radius-tiny: 3px;
+  --border-radius-sm: 5px;
+  --border-radius-md: 7px;
+  --border-radius-lg: 9px;
+
+  /* Screen size */
+  --media-screen-sm: 640px;
+  --media-screen-md: 768px;
+  --media-screen-lg: 1024px;
+  --media-screen-xl: 1280px;
+  --media-screen-2xl: 1536px;
+
+  /* Color */
+  --color-text-primary: #1e1e1e;
+  --color-text-secondry: #234894;
+  --color-text-gray: #696969;
+  --color-body-primary: #fff;
+  --color-bg-icon: #afcedd;
+  --color-btn-primary: #219f95;
+  --color-white: #fff;
+}
+
+/* Initialization */
+
+body {
+  font-family: Tahoma;
+  overflow-x: hidden;
+  background-color: var(--color-body-primary);
+  color: var(--color-text-primary);
+}
+
+body,
+* {
+  font-family: Vazirmatn;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Container  */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.block {
+  padding: 6rem 2rem;
+}
+
+/* Request plan */
+.request {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+.request__header {
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.request__wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(auto, 400px));
+  gap: 10rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.request__card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "num  title  .  .  date"
+    "content_ content_  .  .  . "
+    "pro name .  button button";
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem 1rem;
+}
+
+.request__card .card__number {
+  grid-area: num;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 1rem;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-bg-icon);
+  color: var(--color-text-secondry);
+  border-radius: var(--border-radius-sm);
+}
+
+.request__card .card__title {
+  grid-area: title;
+  font-size: 1.6rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--color-text-secondry);
+}
+
+.request__card .card__date {
+  grid-area: date;
+  font-size: 1.2rem;
+  color: var(--color-text-gray);
+}
+
+.request__card .card__content {
+  grid-area: content_;
+  display: flex;
+  flex-direction: column;
+}
+
+.request__card .card__content > span:first-child {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.request__card .card__content > span:last-child {
+  font-size: 1.2rem;
+  color: var(--color-text-gray);
+}
+
+.request__card .card__pic {
+  grid-area: pro;
+  width: 40px;
+  height: 40px;
+}
+
+.request__card .card__pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+}
+
+.request__card .card__name {
+  grid-area: name;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.request__card .card__button {
+  grid-area: button;
+}
+
+.request__card .card__button button {
+  border: 0;
+  white-space: nowrap;
+  padding: 1.5rem 1.3rem;
+  background-color: var(--color-btn-primary);
+  color: var(--color-white);
+  border-radius: var(--border-radius-md);
+}
+
+.request__card .card__date,
+.card__button {
+  justify-self: end;
+}
+
+.request__card .card__number,
+.card__content,
+.card__pic {
+  justify-self: center;
+}
+
+/* Media query */
+
+@media screen and (min-width: 480px) {
+  .request__header {
+    font-size: 1.6rem;
+  }
+
+  .request__card {
+    gap: 1.4rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .request {
+    align-items: flex-start;
+  }
+  .request__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap:  10rem ;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .request__header {
+    font-size: 2rem;
+  }
+
+  .request__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10rem 5rem;
+  }
+
+  .request__card {
+    gap: 1.4rem 1rem;
+  }
+
+ 
+
+
+}
+
+@media screen and (min-width: 1580px) {
+
+    .request__wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10rem;
+      }
+  .request__card {
+    gap: 1.4rem 0;
+  }
+
+
+  .request__card .card__button button {
+    font-size: 1.6rem;
+    white-space: nowrap;
+    padding: 1.5rem 1.3rem;
+    
+  }
+}
